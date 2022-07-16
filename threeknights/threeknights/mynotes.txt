@@ -1,3 +1,10 @@
 Username (leave blank to use 'gb'): grgbar
 Email address: grgbar@hotmail.com
 Password: xopowo
+
+
+github token
+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
+
+
+https://semaphoreci.com/community/tutorials/dockerizing-a-python-django-web-application
