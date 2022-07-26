@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-c4u4e2rpe6=31row0y!*mu-#)8l8zzuor9ck-g0=41e7jfbubv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://threeknights-2rxemminwq-ue.a.run.app', '127.0.0.1']
+ALLOWED_HOSTS = ['https://threeknights-2rxemminwq-ue.a.run.app', '127.0.0.1', 
+'threeknights-gcr1-svc-6xadg7psqa-uc.a.run.app']
 
 
 # Application definition
