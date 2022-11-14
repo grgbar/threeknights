@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [ '127.0.0.1', 'threeknights-gcr1-svc-6xadg7psqa-uc.a.run.app','localhost']
 
+CSRF_TRUSTED_ORIGINS = ['https://*.localhost','https://*.127.0.0.1']
 
 # Application definition
 

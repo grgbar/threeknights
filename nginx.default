@@ -1,16 +1,19 @@
 # nginx.default
+#Create a new file called nginx.default. This will be our configuration for nginx. 
+#We’ll listen on port 8020, serve the static files from the /opt/app/martor_demo/static directory 
+#and forward the rest of connections to port 8010, where Gunicorn will be listening
 
 server {
     listen 8020;
     server_name example.org;
 
     location / {
-#        proxy_pass localhost:8010;
+        #proxy_pass localhost:8010;
         proxy_pass http://127.0.0.1:8010;
         proxy_set_header Host $host;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     }
     location /static {
-        root /opt/app/threeknights;
+        root /opt/app/threeknightswebsite;
     }
 }

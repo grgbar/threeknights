@@ -21,15 +21,17 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 RUN pip install --upgrade pip  
 RUN mkdir -p /opt/app
 RUN mkdir -p /opt/app/pip_cache
-RUN mkdir -p /opt/app/threeknights
+RUN mkdir -p /opt/app/threeknightswebsite
 COPY requirements.txt start-server.sh /opt/app/
 COPY .pip_cache /opt/app/pip_cache/
-COPY threeknights /opt/app/threeknights/
+COPY threeknightswebsite /opt/app/threeknightswebsite/
 WORKDIR /opt/app
 RUN pip install -r requirements.txt --cache-dir /opt/app/pip_cache
 RUN chown -R www-data:www-data /opt/app
 
-# start server
+# start server 
+#We’ll listen on port 8020, serve the static files from the /opt/app/martor_demo/static directory 
+#and forward the rest of connections to port 8010, where Gunicorn will be listening
 EXPOSE 8020
 STOPSIGNAL SIGTERM
 CMD ["/opt/app/start-server.sh"]
