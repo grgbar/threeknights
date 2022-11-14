@@ -1,1 +1,5 @@
-../venv/
+venv/
+GoogleAuthKeyTest.json
+threeknightswebsite/mynotes.txt
+.idea
+.env

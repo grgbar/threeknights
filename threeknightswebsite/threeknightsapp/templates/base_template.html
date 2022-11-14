@@ -1,0 +1,48 @@
+{% load socialaccount %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>{% block title %}Tree Knights Site{% endblock %}</title>
+</head>
+
+<body>
+  {% block google_auth_block %} 
+    Tree Knights Google Auth base template
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }} !</p>
+        <div id="content">
+          {% block content %}{% endblock %}
+        </div>
+        <div id="sidebar">
+          {% block sidebar %}
+          <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/exercise/1">exercise 1</a></li>
+              <li><a href="/exercise/2">exercise 2</a></li>
+          </ul>
+          {% endblock %}
+      </div>
+        <a target="_black" href="admin">admin</a>
+        <a href="{% url 'logout' %}">Logout</a>
+    {% elif 'google_loginwww' %}
+      <p><a href="{% provider_login_url 'google' %}">Login with Google remove</a></p>
+      <!-- <script>
+        alert('need to login');
+      </script> -->
+      <script>
+        alert(' with g need to login');
+      </script>
+         <!--  <a href="{% provider_login_url 'google' %}">Login with Google</a>-->
+    {% else %}
+      <script>alert('ELSE need to login');</script>
+    {% endif %}
+  {% endblock %}
+    
+<script>
+  alert('{{ request.path.name }}');
+</script>
+<p>Base template more data   </p> 
+</body>
+</html>
